@@ -17,7 +17,7 @@ public class TwoWayTeleporter : PlayerTeleporter
         {
             _isTeleporting.SetFalse();  // We're at our destination
         }
-        else
+        else if (IsEnteringFromCorrectSide())
         {
             _isTeleporting.SetTrue();
             TeleportPlayer();
