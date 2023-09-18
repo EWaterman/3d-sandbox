@@ -7,9 +7,13 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class PlayerInputController : MonoBehaviour
 {
+    const float MAX_FALLING_SPEED = 90;
+
     [Header("Config")]
     [SerializeField] float _walkSpeed;
+    [SerializeField] bool _sprintEnabled = true;
     [SerializeField] float _sprintSpeed;
+    [SerializeField] bool _jumpEnabled = true;
     [SerializeField] float _jumpHeight;
     [SerializeField] float _coyoteTime;
     [SerializeField] float _gravity = -9.8f;
@@ -41,6 +45,8 @@ public class PlayerInputController : MonoBehaviour
 
     void Update()
     {
+        // TODO: make it so you don't bounce down slopes https://forum.unity.com/threads/player-bouncing-down-slopes.828093/
+
         AdvanceJumpTimer(Time.deltaTime);
         ApplyVerticalForcesToVelocity();
         ApplyHorizontalForcesToVelocity();
@@ -58,11 +64,17 @@ public class PlayerInputController : MonoBehaviour
 
     void OnSprint(InputValue value)
     {
+        if (!_sprintEnabled)
+            return;
+
         _isSprinting = value.isPressed;
     }
 
     void OnJump()
     {
+        if (!_jumpEnabled)
+            return;
+
         _tryApplyJumpNextFrame = true;
     }
 
@@ -100,10 +112,12 @@ public class PlayerInputController : MonoBehaviour
 
         if (!_characterController.isGrounded)
         {
-            // += so that we constantly accelerate as we fall. We apply a second delta
+            // += so that we constantly accelerate as we fall. We apply an additional delta
             // time here because real life acceleration of free falling depends on the
             // square of the delta time.
-            _velocity.y += _gravity * Time.deltaTime;
+            _velocity.y = Mathf.Min(
+                MAX_FALLING_SPEED,
+                _velocity.y + _gravity * Time.deltaTime);
         }
         else if (IsMovingDownward)
         {
