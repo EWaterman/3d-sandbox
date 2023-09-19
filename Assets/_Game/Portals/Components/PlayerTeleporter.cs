@@ -23,6 +23,9 @@ public abstract class PlayerTeleporter : MonoBehaviour
     [SerializeField, Tooltip("True if the portal works from either side of the plane. False if just the front side.")]
     bool _worksFromBothSides;
 
+    [SerializeField, Tooltip("True to maintain the player's offset from the center of the teleport plane (at the moment of teleporting).")]
+    bool _applyOffsetFromCenterOfPortal;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.IsPlayer())
@@ -64,9 +67,20 @@ public abstract class PlayerTeleporter : MonoBehaviour
 
         Vector3 playerPosition = _playerController.transform.position;
 
-        float x = _preserveX ? playerPosition.x : _destination.position.x;
-        float y = _preserveY ? playerPosition.y : _destination.position.y;
-        float z = _preserveZ ? playerPosition.z : _destination.position.z;
+        float destinationX = _destination.position.x;
+        float destinationY = _destination.position.y;
+        float destinationZ = _destination.position.z;
+        if (_applyOffsetFromCenterOfPortal)
+        {
+            destinationX += (playerPosition.x - transform.position.x);
+            destinationY += (playerPosition.y - transform.position.y);
+            destinationZ += (playerPosition.z - transform.position.z);
+        }
+
+        // Note: Preserving positions takes priority over offsets.
+        float x = _preserveX ? playerPosition.x : destinationX;
+        float y = _preserveY ? playerPosition.y : destinationY;
+        float z = _preserveZ ? playerPosition.z : destinationZ;
 
         _playerController.transform.position = new Vector3(x, y, z);
 
