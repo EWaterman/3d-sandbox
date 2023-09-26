@@ -21,11 +21,11 @@ public class SoundEmitter : MonoBehaviour
     /**
      * Instructs the AudioSource to play a single clip in a position in 3D space.
      */
-    public void PlayAudioClip(AudioClip clip, AudioConfigModel settings, Vector3 whereToPlay)
+    public void PlayAudioClip(AudioClip clip, AudioConfigModel settings)
     {
         _audioSource.clip = clip;
-        settings.ApplyTo(_audioSource);
-        _audioSource.transform.position = whereToPlay;
+        //settings.ApplyTo(_audioSource);  // don't need custom config currently
+        //_audioSource.transform.position = whereToPlay;  // just play a global sound for now without a position
         _audioSource.Play();
 
         StartCoroutine(FinishedPlaying(clip.length));

@@ -15,7 +15,6 @@ public class AudioManager : MonoBehaviour
 
     [Header("Global config")]
     [SerializeField] AudioConfigModel _globalAudioConfig;  // We always use the same config for now
-    [SerializeField] Transform _whereToPlayAudio;  // We always play directly on top of the player for now
 
     [Header("SoundEmitters pool")]
     [SerializeField] SoundEmitterPool _pool;
@@ -95,7 +94,7 @@ public class AudioManager : MonoBehaviour
         SoundEmitter soundEmitter = _pool.Request();
         if (soundEmitter != null)  // This should never be null because we create new instances on demand but check anyways.
         {
-            soundEmitter.PlayAudioClip(audioToPlay, _globalAudioConfig, _whereToPlayAudio.position);
+            soundEmitter.PlayAudioClip(audioToPlay, _globalAudioConfig);
             soundEmitter.OnSoundFinishedPlaying += OnSoundEmitterFinishedPlaying;
         }
     }

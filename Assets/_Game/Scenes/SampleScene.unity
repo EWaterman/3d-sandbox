@@ -7315,6 +7315,10 @@ PrefabInstance:
       propertyPath: _balloonInteractedWithEventChannel
       value: 
       objectReference: {fileID: 11400000, guid: f8688ebe506329b4e97a8aabb18135e1, type: 2}
+    - target: {fileID: 5107684287957565853, guid: 764855fc96ae8cd4098ba8030f1e20b1, type: 3}
+      propertyPath: _clip
+      value: 
+      objectReference: {fileID: 8300000, guid: dd9bbfa71982e1b41a66dd499ec17f61, type: 3}
     - target: {fileID: 6982493396906968114, guid: 764855fc96ae8cd4098ba8030f1e20b1, type: 3}
       propertyPath: _target
       value: 
@@ -45939,6 +45943,10 @@ PrefabInstance:
       propertyPath: _balloonInteractedWithEventChannel
       value: 
       objectReference: {fileID: 11400000, guid: f8688ebe506329b4e97a8aabb18135e1, type: 2}
+    - target: {fileID: 5107684287957565853, guid: 764855fc96ae8cd4098ba8030f1e20b1, type: 3}
+      propertyPath: _clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e4e856f0353a6c4f8730fa1fb431732, type: 3}
     - target: {fileID: 6982493396906968114, guid: 764855fc96ae8cd4098ba8030f1e20b1, type: 3}
       propertyPath: _target
       value: 
@@ -78319,7 +78327,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -89677,6 +89685,10 @@ PrefabInstance:
       propertyPath: _balloonInteractedWithEventChannel
       value: 
       objectReference: {fileID: 11400000, guid: f8688ebe506329b4e97a8aabb18135e1, type: 2}
+    - target: {fileID: 5107684287957565853, guid: 764855fc96ae8cd4098ba8030f1e20b1, type: 3}
+      propertyPath: _clip
+      value: 
+      objectReference: {fileID: 8300000, guid: dedcf2e50a753124690742f392704ae9, type: 3}
     - target: {fileID: 6982493396906968114, guid: 764855fc96ae8cd4098ba8030f1e20b1, type: 3}
       propertyPath: _target
       value: 
@@ -95364,7 +95376,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _globalAudioConfig: {fileID: 11400000, guid: b44c7982bf1f7b943a0d4d154e08d0fe, type: 2}
-  _whereToPlayAudio: {fileID: 209920778}
   _pool: {fileID: 11400000, guid: dfda9cb8b40d02549bd2c782e404f6ee, type: 2}
   _initialSize: 3
   _audioEventChannel: {fileID: 11400000, guid: bf4b8e0b7bdac654ca8ec53e887b60b3, type: 2}
@@ -97415,6 +97426,10 @@ PrefabInstance:
       propertyPath: _balloonInteractedWithEventChannel
       value: 
       objectReference: {fileID: 11400000, guid: f8688ebe506329b4e97a8aabb18135e1, type: 2}
+    - target: {fileID: 5107684287957565853, guid: 764855fc96ae8cd4098ba8030f1e20b1, type: 3}
+      propertyPath: _clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 88f93d44f720eec4c8cf79cc322e6ff9, type: 3}
     - target: {fileID: 6982493396906968114, guid: 764855fc96ae8cd4098ba8030f1e20b1, type: 3}
       propertyPath: _target
       value: 
@@ -108552,6 +108567,10 @@ PrefabInstance:
       propertyPath: _balloonInteractedWithEventChannel
       value: 
       objectReference: {fileID: 11400000, guid: f8688ebe506329b4e97a8aabb18135e1, type: 2}
+    - target: {fileID: 5107684287957565853, guid: 764855fc96ae8cd4098ba8030f1e20b1, type: 3}
+      propertyPath: _clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 604b6cdbc51973a469a8653879d20290, type: 3}
     - target: {fileID: 6982493396906968114, guid: 764855fc96ae8cd4098ba8030f1e20b1, type: 3}
       propertyPath: _target
       value: 
@@ -114327,6 +114346,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Speech Bubble - Initial
       objectReference: {fileID: 0}
+    - target: {fileID: 5107684287957565853, guid: 764855fc96ae8cd4098ba8030f1e20b1, type: 3}
+      propertyPath: _clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ba1cb546f6c7474dabb52afd4de22a9, type: 3}
     - target: {fileID: 6982493396906968114, guid: 764855fc96ae8cd4098ba8030f1e20b1, type: 3}
       propertyPath: _target
       value: 
